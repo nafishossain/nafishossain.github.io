@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    padding: 1rem 5%;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #1a2b4b, #2a4b8d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #1a2b4b;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #1a2b4b, #2a4b8d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="rgba(255, 255, 255, 0.05)" d="M45.3,-76.3C59.9,-69.8,73.5,-59.2,80.9,-45.1C88.4,-31,89.7,-13.4,86.7,2.9C83.7,19.2,76.4,34.2,66.4,46.9C56.4,59.6,43.7,70,29.1,75.7C14.5,81.4,-2,82.3,-17.7,78.5C-33.4,74.7,-48.3,66.2,-60.1,54.3C-71.9,42.4,-80.6,27,-83.7,10.3C-86.8,-6.4,-84.3,-24.4,-76.2,-39.3C-68.1,-54.2,-54.4,-66,-39.7,-72.6C-25,-79.1,-9.3,-80.4,3.9,-77.1C17.2,-73.8,30.7,-82.8,45.3,-76.3Z" transform="translate(100 100)" /></svg>') no-repeat center center;
+    opacity: 0.1;
+    animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.cta-button {
+    padding: 1.2rem 2.5rem;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    background: white;
+    color: #1a2b4b;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.features {
+    padding: 5rem 10%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    background-color: #f8f9fa;
+}
+
+.feature-card {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.footer {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #1a2b4b, #2a4b8d);
+    color: white;
+}
+
+.who-we-are {
+    padding: 5rem 10%;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.who-we-are::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, rgba(26,43,75,0.1), rgba(42,75,141,0.1));
+    border-radius: 50%;
+    top: -300px;
+    right: -300px;
+    z-index: 0;
+}
+
+.who-we-are .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.who-we-are h2 {
+    font-size: 2.5rem;
+    color: #1a2b4b;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.who-we-are .intro {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.who-we-are .services-list {
+    list-style: none;
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+}
+
+.who-we-are .services-list li {
+    position: relative;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.who-we-are .services-list li:before {
+    content: "•";
+    color: #1a2b4b;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.who-we-are .highlight {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-left: 4px solid #1a2b4b;
+    font-style: italic;
+}
+
+.who-we-are .current-focus {
+    margin-top: 2rem;
+    color: #1a2b4b;
+    font-weight: 500;
+}
+
+.products {
+    padding: 5rem 10%;
+    background-color: #f8f9fa;
+}
+
+.products .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.products h2 {
+    font-size: 2.5rem;
+    color: #1a2b4b;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.products .intro {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.product-category {
+    margin-bottom: 2.5rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.product-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.product-category h3 {
+    color: #1a2b4b;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.product-category .sub-title {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.product-list {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.product-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.product-list li:before {
+    content: "•";
+    color: #1a2b4b;
+    position: absolute;
+    left: 0;
+}
+
+.product-list p {
+    color: #666;
+    margin-top: 0.25rem;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .navbar {
+        padding: 1rem 5%;
+    }
+    
+    .who-we-are {
+        padding: 3rem 5%;
+    }
+    
+    .who-we-are h2 {
+        font-size: 2rem;
+    }
+    
+    .products {
+        padding: 3rem 5%;
+    }
+    
+    .products h2 {
+        font-size: 2rem;
+    }
+}
