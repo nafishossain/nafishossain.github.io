@@ -25,11 +25,10 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">Shrimpex</div>
+        <a href="index.html" class="logo">Shrimpex</a>
         <div class="nav-links">
             <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="contact.html">Contact</a>
         </div>
         <!-- Add hamburger button -->
         <button class="hamburger" onclick="toggleMobileMenu()">
@@ -43,8 +42,7 @@
     <div class="mobile-nav">
         <button class="close-menu" onclick="toggleMobileMenu()">×</button>
         <a href="#home" onclick="toggleMobileMenu()">Home</a>
-        <a href="#about" onclick="toggleMobileMenu()">About</a>
-        <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+        <a href="contact.html" onclick="toggleMobileMenu()">Contact</a>
     </div>
 
     <section id="hero" class="hero">
@@ -52,7 +50,7 @@
             <h1 class="main-title">Shrimpex Agencies Ltd.</h1>
             <h2>Premium Quality Shrimp Export</h2>
             <p>Your Trusted Seafood Buying Partner in Bangladesh – Ensuring Quality, Reliability, and Timely Shipments for Shrimp and Frozen Seafood Imports.</p>
-            <button class="cta-button">Contact Us</button>
+            <button class="cta-button" onclick="window.location.href='contact.html'">Contact Us</button>
         </div>
     </section>
 
